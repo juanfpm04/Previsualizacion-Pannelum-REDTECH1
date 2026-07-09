@@ -10,6 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 
     <style>
+       @media only screen and (hover: none) and (pointer: coarse){
+    .pnlm-hotspot-base pnlm-hotspot pnlm-sprite pnlm-info custom-tooltip{
+        scale: 2;
+    }
+
+    }
+        
     #panorama {
         width:1200px;
         height: 600px;
@@ -37,6 +44,7 @@
         text-align: center;
         cursor: default;
         font-weight: bold;
+
     }
     img {
         margin-top: 8px;
