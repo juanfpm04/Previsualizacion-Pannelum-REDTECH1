@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>Custom hot spots</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
+
+    <style>
+    #panorama {
+        width:1200px;
+        height: 600px;
+    }
+
+    h1{
+    font-size: 24px;
+    margin: 0 0 15px;
+    color: #111;
+    }
+
+    h2{
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    }
+    
+    div.custom-tooltip span {
+        visibility: hidden;
+        position: absolute;
+        background: linear-gradient(180deg, #ffffff 246px, #F4F4F4 247px,#F4F4F4);
+         box-shadow: 2px 2px 5px #333333;
+        border-radius: 5px;
+        width: 244px;    
+        text-align: center;
+        cursor: default;
+        font-weight: bold;
+    }
+    img {
+        margin-top: 8px;
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+    }
+    div.custom-tooltip:hover span{
+        visibility: visible;
+    }
+    .enlace-menu {
+        background-color: #001F4B;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 15px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+}
+.enlace-menu:hover {
+  background-color:  #00D78B; 
+  color: white;
+}
+div.custom-tooltip:hover .enlace-menu {
+    transition: background-color 0.4s;
+}
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+
+<script>
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "https://i.imgur.com/Oh0ILRv.jpeg",
+    /*
+     * Uncomment the next line to print the coordinates of mouse clicks
+     * to the browser's developer console, which makes it much easier
+     * to figure out where to place hot spots. Always remove it when
+     * finished, though.
+     */
+    "hotSpotDebug": true,
+
+    /* createImageTooltip Se usa para crear un punto caliente con una imagen*/
+    /* createTooltip Se usa para crear un punto caliente sin imagen */
+    
+    "hotSpots": [
+        {
+            "pitch": -14.479493106223448,
+            "yaw": -92.59983014215146,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Zona de creación de contenido AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },
+            {
+            "pitch": -1.1071865134002727,
+            "yaw": 154.26895837306046,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Mueble de almacenamiento",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },    
+            {
+            "pitch": -6.704155552577304,
+            "yaw": 69.6477140430644,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Zona de creación de contenido AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },  
+            {
+            "pitch": -10.481075773514764,
+            "yaw": -176.89078554088866,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Estaciones de Trabajo",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },  
+
+            {
+            "pitch": -52.81951027278512,
+            "yaw": 33.92684694129758,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Zona AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },  
+            {
+            "pitch": -22.751534802768905,
+            "yaw": 10.156994890654108,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Zona AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },    
+            {
+            "pitch": -43.017172891375445,
+            "yaw": 156.6353836947589,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Zona AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },    
+
+            {
+            "pitch": -14.383122252225087,
+            "yaw": -138.4048348359416,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/       "Silla Maker ",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },
+        
+            {
+            "pitch": -9.729563866072615,
+            "yaw": 40.59368726797201,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/         "Mesa Multimedia Mobitec",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },       
+            {
+            "pitch": -10.94359301021075,
+            "yaw": 169.72911103546525,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "https://i.imgur.com/YO7sm02.jpeg" ,
+             /*Producto*/         "Mesa de Ideación Mobitec",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },      
+            
+
+
+        
+
+    ]
+});
+
+function createImageTooltip(div, args) {
+    var span = document.createElement('span');
+    document.getElementById('panorama')
+    span.style.maxWidth = 'initial';
+    var image = document.createElement('img');
+    span.innerHTML = `
+    <img src="${args[0]}" width="95%"> 
+    <h2>${args[2]}</h2>
+    <h1>${args[1]}</h1>
+    <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
+    `;
+    div.classList.add('custom-tooltip');
+    div.appendChild(span);
+    span.style.width = span.scrollWidth - 0 + 'px';
+    span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
+    span.style.marginTop = -span.scrollHeight / 2 + 'px';
+}
+
+function createTooltip(div, args) {
+    var span = document.createElement('span');
+    document.getElementById('panorama')
+    span.style.maxWidth = 'initial';
+    var image = document.createElement('img');
+    span.innerHTML = `
+    <h2>${args[2]}</h2>
+    <h1>${args[1]}</h1>
+    <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
+    `;
+    div.classList.add('custom-tooltip');
+    div.appendChild(span);
+    span.style.width = span.scrollWidth - 0 + 'px';
+    span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
+    span.style.marginTop = -span.scrollHeight / 2 + 'px';
+}
+
+
+</script>
+
