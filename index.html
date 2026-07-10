@@ -10,11 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 
     <style>
-    .custom-hotspot1 {
-        height: 50px;
-        width: 50px;
-        background: #f00;
-    }
+    @media only screen and (max-device-width: 640px) {
+    width:600px;
+    height: 600px;
+    }    
+
     #panorama {
         width:1200px;
         height: 600px;
@@ -98,8 +98,8 @@ pannellum.viewer('panorama', {
         {
             "pitch": -14.479493106223448,
             "yaw": -92.59983014215146,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
-            "cssClass": "custom-hotspot2",
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "1.webp" ,
              /*Producto*/       "Zona de creación de contenido AR/VR",
@@ -110,8 +110,8 @@ pannellum.viewer('panorama', {
             {
             "pitch": -1.1071865134002727,
             "yaw": 154.26895837306046,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
-            "cssClass": "custom-hotspot2",
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "2.webp" ,
              /*Producto*/       "Mueble de almacenamiento",
@@ -122,8 +122,8 @@ pannellum.viewer('panorama', {
             {
             "pitch": -6.704155552577304,
             "yaw": 69.6477140430644,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
-            "cssClass": "custom-hotspot2",
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "3.webp" ,
              /*Producto*/       "Zona de creación de contenido AR/VR",
@@ -134,7 +134,7 @@ pannellum.viewer('panorama', {
             {
             "pitch": -10.481075773514764,
             "yaw": -176.89078554088866,
-            "cssClass": "custom-hotspot1",
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "5.webp" ,
@@ -147,8 +147,8 @@ pannellum.viewer('panorama', {
             {
             "pitch": -52.81951027278512,
             "yaw": 33.92684694129758,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
-            "cssClass": "custom-hotspot2",
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "4.webp" ,
              /*Producto*/       "Zona AR/VR",
@@ -156,10 +156,35 @@ pannellum.viewer('panorama', {
              /*Texto Boton*/      "Conoce Nuestos Espacios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
         },  
-       
+            {
+            "pitch": -22.751534802768905,
+            "yaw": 10.156994890654108,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "4.webp" ,
+             /*Producto*/       "Zona AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },    
+            {
+            "pitch": -43.017172891375445,
+            "yaw": 156.6353836947589,
+            "type": "info",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "4.webp" ,
+             /*Producto*/       "Zona AR/VR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },    
+
             {
             "pitch": -14.383122252225087,
             "yaw": -138.4048348359416,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "8.webp" ,
@@ -168,11 +193,12 @@ pannellum.viewer('panorama', {
              /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
         },
+        
             {
             "pitch": -9.729563866072615,
             "yaw": 40.59368726797201,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
-            "cssClass": "custom-hotspot1",
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "6.webp" ,
              /*Producto*/         "Mesa Multimedia Mobitec",
@@ -183,8 +209,8 @@ pannellum.viewer('panorama', {
             {
             "pitch": -10.94359301021075,
             "yaw": 169.72911103546525,
+            "type": "info",
             "createTooltipFunc": createImageTooltip,
-            "cssClass": "custom-hotspot1",
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "7.webp" ,
              /*Producto*/         "Mesa de Ideación Mobitec",
