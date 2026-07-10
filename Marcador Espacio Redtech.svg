@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6mm"
+   height="8mm"
+   viewBox="0 0 6 8"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="Marcador Espacio Redtech.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="8.1336326"
+     inkscape:cx="32.088983"
+     inkscape:cy="28.646487"
+     inkscape:window-width="1147"
+     inkscape:window-height="1032"
+     inkscape:window-x="1024"
+     inkscape:window-y="177"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 0.1023905,2.9480633 c 0,-1.5730443 1.2982259,-2.8471808 2.8983677,-2.8471808 1.6001391,0 2.8983597,1.2741365 2.8983597,2.8471808 0,1.8009939 -1.8144953,3.9597819 -2.5723011,4.7825369 -0.1781248,0.193237 -0.4755085,0.193237 -0.6536359,0 C 1.9153831,6.9078452 0.1008825,4.7490572 0.1008825,2.9480633 Z m 2.8983677,1.0174899 a 0.96612242,0.96616981 0 1 0 0,-1.9323341 0.96612242,0.96616981 0 1 0 0,1.9323341 z"
+       id="path1"
+       style="fill:#0064f5;fill-opacity:1;stroke:#001f4b;stroke-width:0.201765;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>
