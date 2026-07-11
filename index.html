@@ -10,15 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 
     <style>
-    @media only screen and (max-device-width: 640px) {
-    width:600px;
-    height: 600px;
-    } 
-    .custom-hotspotM {
-        height: 50px;
-        width: 50px;
-        background:background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Created with Inkscape (http://www.inkscape.org/) --%3E%3Csvg width='6mm' height='6mm' viewBox='0 0 6 6' version='1.1' id='svg1' inkscape:version='1.4 (86a8ad7, 2024-10-11)' sodipodi:docname='Marcador Mueble Redtech.svg' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Csodipodi:namedview id='namedview1' pagecolor='%23ffffff' bordercolor='%23000000' borderopacity='0.25' inkscape:showpageshadow='2' inkscape:pageopacity='0.0' inkscape:pagecheckerboard='0' inkscape:deskcolor='%23d1d1d1' inkscape:document-units='mm' inkscape:zoom='4.0668163' inkscape:cx='32.334876' inkscape:cy='-70.448227' inkscape:window-width='2560' inkscape:window-height='1009' inkscape:window-x='-8' inkscape:window-y='-8' inkscape:window-maximized='1' inkscape:current-layer='layer1' /%3E%3Cdefs id='defs1' /%3E%3Cg inkscape:label='Capa 1' inkscape:groupmode='layer' id='layer1'%3E%3Cpath style='fill:%2300d78b;fill-opacity:1;stroke:%23001f4b;stroke-width:0.20092;stroke-dasharray:none;stroke-opacity:1' d='m 3.0002949,0.10046 c -1.596585,5.3e-6 -2.8998296,1.30325 -2.8998349,2.8998349 0,1.5965877 1.3032473,2.8992449 2.8998349,2.8992449 1.5965903,0 2.8992449,-1.3026546 2.8992449,-2.8992449 0,-1.5965876 -1.3026572,-2.8998349 -2.8992449,-2.8998349 z m 0,0.8000999 c 1.1643186,-2.6e-6 2.0997377,0.9354191 2.0997377,2.099735 0,1.1643187 -0.9354191,2.0997377 -2.0997377,2.0997377 -1.1643159,0 -2.0997376,-0.935419 -2.099735,-2.0997377 0,-1.1643159 0.9354191,-2.099735 2.099735,-2.099735 z' id='circle4' /%3E%3Cellipse style='fill:%2300d78b;fill-opacity:1;stroke:%23001f4b;stroke-width:0.20092;stroke-dasharray:none;stroke-opacity:1' id='path22' cx='3.0001817' cy='3.0130737' rx='0.83464646' ry='0.84755343' /%3E%3C/g%3E%3C/svg%3E%0A");;
-    }    
+
 
     #panorama {
         width:1200px;
@@ -39,7 +31,7 @@
     
     div.custom-tooltip span {
         visibility: hidden;
-        position: sticky;
+        position: absolute;
         background: linear-gradient(180deg, #ffffff 246px, #F4F4F4 247px,#F4F4F4);
          box-shadow: 2px 2px 5px #333333;
         border-radius: 5px;
@@ -47,6 +39,7 @@
         text-align: center;
         cursor: default;
         font-weight: bold;
+        z-index: 2;
 
     }
     img {
@@ -55,8 +48,16 @@
         height: 230px;
         object-fit: cover;
     }
+    .icon-element {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/icons/heart.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
     div.custom-tooltip:hover span{
         visibility: visible;
+        z-index: 9999;
     }
     .enlace-menu {
         background-color: #001F4B;
@@ -70,14 +71,35 @@
         margin: 15px 15px;
         cursor: pointer;
         border-radius: 5px;
-}
-.enlace-menu:hover {
-  background-color:  #00D78B; 
-  color: white;
-}
-div.custom-tooltip:hover .enlace-menu {
+    }
+    .enlace-menu:hover {
+        background-color:  #00D78B; 
+        color: white;
+    }
+    div.custom-tooltip:hover .enlace-menu {
     transition: background-color 0.4s;
-}
+    }
+    .espacio{
+        width: 50px;
+        height: 50px;
+        background-image: url('Marcador Espacio Redtech.svg');
+        background-repeat: no-repeat;
+        background-size: contain;   
+    }
+
+    .pnlm-hotspot:hover span{
+        width: 0px;
+        height: 50px;
+
+    }
+
+    .mueble{
+        width: 40px;
+        height: 40px;
+        background-image: url('Marcador Mueble Redtech.svg');
+        background-repeat: no-repeat;
+        background-size: contain; 
+    }
     </style>
 </head>
 <body>
@@ -100,130 +122,170 @@ pannellum.viewer('panorama', {
     /* createTooltip Se usa para crear un punto caliente sin imagen */
     
     "hotSpots": [
+
+
         {
             "pitch": -14.479493106223448,
-            "yaw": -92.59983014215146,
-            "type": "info",
-            "cssClass": "custom-hotspotM",
+            "yaw": -88.59983014215146,
+            "cssClass": "espacio",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "1.webp" ,
-             /*Producto*/       "Zona de creación de contenido AR/VR",
+             /*Producto*/       "Zona de creación de contenido AR/VR/XR",
              /*Tipo de Producto*/ "Espacio",
-             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Texto Boton*/      "Conoce Nuestros Espacios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
         },
-            {
-            "pitch": -1.1071865134002727,
-            "yaw": 154.26895837306046,
-            "type": "info",
+
+        {
+            "pitch": -53.870581604577644,
+            "yaw": 35.848100484516706,
+            "cssClass": "espacio",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "4.webp" ,
+             /*Producto*/         "Zona de experimentación VR/AR/XR",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestros Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },
+
+        {
+            "pitch": 1.7348985885524484,
+            "yaw": 154.28298640444578,
+            "cssClass": "espacio",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "2.webp" ,
-             /*Producto*/       "Mueble de almacenamiento",
-             /*Tipo de Producto*/ "Mobiliario",
-             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
-             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },    
-            {
-            "pitch": -6.704155552577304,
-            "yaw": 69.6477140430644,
-            "type": "info",
-            "createTooltipFunc": createImageTooltip,
-            "createTooltipArgs": [
-             /*Enlace de Imagen*/ "3.webp" ,
-             /*Producto*/       "Zona de creación de contenido AR/VR",
+             /*Producto*/       "Zona de almacenamiento y gestion de equipos",
              /*Tipo de Producto*/ "Espacio",
-             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Texto Boton*/      "Conoce Nuestros Espacios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },  
-            {
-            "pitch": -10.481075773514764,
-            "yaw": -176.89078554088866,
-            "type": "info",
+        },
+
+                {
+            "pitch": -11.10785945871739,
+            "yaw": -176.38476086752135,
+            "cssClass": "espacio",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "5.webp" ,
-             /*Producto*/       "Estaciones de Trabajo",
+             /*Producto*/       "Zona de ideacion y gestion docente",
              /*Tipo de Producto*/ "Espacio",
-             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Texto Boton*/      "Conoce Nuestros Espacios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },  
+        },
+                {
+            "pitch": 13.407820728713448,
+            "yaw": 70,
+            "cssClass": "espacio",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "3.webp" ,
+             /*Producto*/       "Zona de presentacion",
+             /*Tipo de Producto*/ "Espacio",
+             /*Texto Boton*/      "Conoce Nuestros Espacios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },
+                {
+            "pitch": -5.197880292866372,
+            "yaw": 69.8673898936344,
+            "cssClass": "mueble",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "3.webp" ,
+             /*Producto*/       "Pantalla interactiva",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestros Mobiliarios",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },
+                        {
+            "pitch": 22.798494601843423,
+            "yaw": 2,
+            "cssClass": "mueble",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "10.webp" ,
+             /*Producto*/       "Módulos de iluminación LED",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestras Soluciones",
+             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
+        },
 
-            {
-            "pitch": -52.81951027278512,
-            "yaw": 33.92684694129758,
-            "type": "info",
+                {
+            "pitch": -5.855619254726606,
+            "yaw": 156.05586889472798,
+            "cssClass": "mueble",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
-             /*Enlace de Imagen*/ "4.webp" ,
-             /*Producto*/       "Zona AR/VR",
-             /*Tipo de Producto*/ "Espacio",
-             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace de Imagen*/ "2.webp" ,
+             /*Producto*/       "Estación de almacenamiento de materiales y equipos",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestros Mobiliarios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },  
-            {
-            "pitch": -22.751534802768905,
-            "yaw": 10.156994890654108,
-            "type": "info",
+        },
+                        {
+            "pitch": 10.935677497816334,
+            "yaw": -177.82924748925586,
+            "cssClass": "mueble",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
-             /*Enlace de Imagen*/ "4.webp" ,
-             /*Producto*/       "Zona AR/VR",
-             /*Tipo de Producto*/ "Espacio",
-             /*Texto Boton*/      "Conoce Nuestos Espacios",
+             /*Enlace de Imagen*/ "9.webp" ,
+             /*Producto*/       "Ambientación y decoración",
+             /*Tipo de Producto*/ "Mobiliario",
+             /*Texto Boton*/      "Conoce Nuestras Soluciones",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },    
-            {
-            "pitch": -43.017172891375445,
-            "yaw": 156.6353836947589,
-            "type": "info",
-            "createTooltipFunc": createImageTooltip,
-            "createTooltipArgs": [
-             /*Enlace de Imagen*/ "4.webp" ,
-             /*Producto*/       "Zona AR/VR",
-             /*Tipo de Producto*/ "Espacio",
-             /*Texto Boton*/      "Conoce Nuestos Espacios",
-             /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },    
-
-            {
-            "pitch": -14.383122252225087,
-            "yaw": -138.4048348359416,
-            "type": "info",
+        },
+                                {
+            "pitch": -18.053604228819836,
+            "yaw": -167.93002295498414,
+            "cssClass": "mueble",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "8.webp" ,
-             /*Producto*/       "Silla Maker ",
+             /*Producto*/       "Silla Maker/ STEM",
              /*Tipo de Producto*/ "Mobiliario",
-             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Texto Boton*/      "Conoce Nuestros Mobiliarios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
         },
-        
-            {
-            "pitch": -9.729563866072615,
-            "yaw": 40.59368726797201,
-            "type": "info",
+                 {
+            "pitch": -9.918124515161717,
+            "yaw": 39.66188019859845,
+            "cssClass": "mueble",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "6.webp" ,
-             /*Producto*/         "Mesa Multimedia Mobitec",
+             /*Producto*/       "Estación multimedia 4 puestos",
              /*Tipo de Producto*/ "Mobiliario",
-             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Texto Boton*/      "Conoce Nuestros Mobiliarios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },       
-            {
-            "pitch": -10.94359301021075,
-            "yaw": 169.72911103546525,
-            "type": "info",
+        },
+                         {
+            "pitch": -10.032432084201826,
+            "yaw": -163.00299719460455,
+            "cssClass": "mueble",
             "createTooltipFunc": createImageTooltip,
             "createTooltipArgs": [
              /*Enlace de Imagen*/ "7.webp" ,
-             /*Producto*/         "Mesa de Ideación Mobitec",
+             /*Producto*/       "Mesa de ideación",
              /*Tipo de Producto*/ "Mobiliario",
-             /*Texto Boton*/      "Conoce Nuestos Mobiliarios",
+             /*Texto Boton*/      "Conoce Nuestros Mobiliarios",
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
-        },      
+        },
+        
+        
+        
+        
+
+
+        
+        
+
+
+
+
+
+   
             
 
 
@@ -232,7 +294,7 @@ pannellum.viewer('panorama', {
     ]
 });
 
-function createImageTooltip(div, args) {
+/*function createImageTooltip(div, args) {
     var span = document.createElement('span');
     document.getElementById('panorama')
     span.style.maxWidth = 'initial';
@@ -248,13 +310,50 @@ function createImageTooltip(div, args) {
     span.style.width = span.scrollWidth - 0 + 'px';
     span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
     span.style.marginTop = -span.scrollHeight / 2 + 'px';
+} */
+function createImageTooltip(div, args) {
+
+    var span = document.createElement('span');
+
+    span.innerHTML = `
+        <img src="${args[0]}" width="95%">
+        <h2>${args[2]}</h2>
+        <h1>${args[1]}</h1>
+        <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
+    `;
+
+    div.classList.add('custom-tooltip');
+    div.appendChild(span);
+
+    span.style.width = span.scrollWidth + 'px';
+    span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
+    span.style.marginTop = -span.scrollHeight / 2 + 'px';
+
+    div.addEventListener("mouseenter", function () {
+
+        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
+            h.style.opacity = "0";
+            h.style.pointerEvents = "none";
+        });
+
+        div.style.opacity = "1";
+        div.style.pointerEvents = "auto";
+    });
+
+    div.addEventListener("mouseleave", function () {
+
+        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
+            h.style.opacity = "1";
+            h.style.pointerEvents = "auto";
+        });
+    });
+
 }
+
 
 function createTooltip(div, args) {
     var span = document.createElement('span');
-    document.getElementById('panorama')
     span.style.maxWidth = 'initial';
-    var image = document.createElement('img');
     span.innerHTML = `
     <h2>${args[2]}</h2>
     <h1>${args[1]}</h1>
@@ -262,11 +361,31 @@ function createTooltip(div, args) {
     `;
     div.classList.add('custom-tooltip');
     div.appendChild(span);
-    span.style.width = span.scrollWidth - 0 + 'px';
+
+    span.style.width = span.scrollWidth + 'px';
     span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
     span.style.marginTop = -span.scrollHeight / 2 + 'px';
+
+    div.addEventListener("mouseenter", function () {
+
+        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
+            h.style.opacity = "0";
+            h.style.pointerEvents = "none";
+        });
+
+        div.style.opacity = "1";
+        div.style.pointerEvents = "auto";
+    });
+
+    div.addEventListener("mouseleave", function () {
+
+        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
+            h.style.opacity = "1";
+            h.style.pointerEvents = "auto";
+        });
+    });
+
 }
 
 
 </script>
-
