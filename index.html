@@ -323,7 +323,7 @@ function createImageTooltip(div, args) {
     span.style.width = span.scrollWidth + 'px';
     span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
     span.style.marginTop = -span.scrollHeight / 2 + 'px';
-    div.addEventListener("mouseover" ||"touchmove" , function () {
+    div.addEventListener("mouseover" ||"touchstart" , function () {
 
         document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
             h.style.opacity = "0";
