@@ -273,54 +273,49 @@ pannellum.viewer('panorama', {
              /*Enlace del Producto*/ "https://i.imgur.com/YO7sm02.jpeg"],
         },
         
-        
-        
-        
 
 
-        
-        
+    /* Constructor Hotspot 
+       Nota: si no se detecta un enlace de alguna imagen en la posicion 0 de la lista, se genera un codigo html
+       alternativo en donde esta no se dibuja  */
 
-
-
-
-
-   
-            
-
-
-        
+        {
+            "pitch": null,
+            "yaw": null ,
+            "cssClass": "mueble",
+            "createTooltipFunc": createImageTooltip,
+            "createTooltipArgs": [
+             /*Enlace de Imagen*/ "" ,
+             /*Producto*/       "Prueba",
+             /*Tipo de Producto*/ "Prueba",
+             /*Texto Boton*/      "Prueba",
+             /*Enlace del Producto*/ "Prueba"]
+        },
 
     ]
 });
 
-/*function createImageTooltip(div, args) {
-    var span = document.createElement('span');
-    document.getElementById('panorama')
-    span.style.maxWidth = 'initial';
-    var image = document.createElement('img');
-    span.innerHTML = `
-    <img src="${args[0]}" width="95%"> 
-    <h2>${args[2]}</h2>
-    <h1>${args[1]}</h1>
-    <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
-    `;
-    div.classList.add('custom-tooltip');
-    div.appendChild(span);
-    span.style.width = span.scrollWidth - 0 + 'px';
-    span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
-    span.style.marginTop = -span.scrollHeight / 2 + 'px';
-} */
+
 function createImageTooltip(div, args) {
 
     var span = document.createElement('span');
 
-    span.innerHTML = `
+    if (args[0].length === 0) {
+        span.innerHTML = `
+        <h2>${args[2]}</h2>
+        <h1>${args[1]}</h1>
+        <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
+        `; 
+    }
+    else {
+         span.innerHTML = `
         <img src="${args[0]}" width="95%">
         <h2>${args[2]}</h2>
         <h1>${args[1]}</h1>
         <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
-    `;
+    `;       
+    }
+
 
     div.classList.add('custom-tooltip');
     div.appendChild(span);
@@ -328,8 +323,7 @@ function createImageTooltip(div, args) {
     span.style.width = span.scrollWidth + 'px';
     span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
     span.style.marginTop = -span.scrollHeight / 2 + 'px';
-
-    div.addEventListener("mouseenter", function () {
+    div.addEventListener("mouseover" ||"touchmove" , function () {
 
         document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
             h.style.opacity = "0";
@@ -347,44 +341,13 @@ function createImageTooltip(div, args) {
             h.style.pointerEvents = "auto";
         });
     });
-
 }
 
 
-function createTooltip(div, args) {
-    var span = document.createElement('span');
-    span.style.maxWidth = 'initial';
-    span.innerHTML = `
-    <h2>${args[2]}</h2>
-    <h1>${args[1]}</h1>
-    <a href="${args[4]}" class="enlace-menu" target="_blank">${args[3]}</a>
-    `;
-    div.classList.add('custom-tooltip');
-    div.appendChild(span);
+    
 
-    span.style.width = span.scrollWidth + 'px';
-    span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
-    span.style.marginTop = -span.scrollHeight / 2 + 'px';
 
-    div.addEventListener("mouseenter", function () {
-
-        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
-            h.style.opacity = "0";
-            h.style.pointerEvents = "none";
-        });
-
-        div.style.opacity = "1";
-        div.style.pointerEvents = "auto";
-    });
-
-    div.addEventListener("mouseleave", function () {
-
-        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
-            h.style.opacity = "1";
-            h.style.pointerEvents = "auto";
-        });
-    });
-
+</script>
 }
 
 
