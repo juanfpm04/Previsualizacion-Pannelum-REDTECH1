@@ -323,7 +323,7 @@ function createImageTooltip(div, args) {
     span.style.width = span.scrollWidth + 'px';
     span.style.marginLeft = -(span.scrollWidth - div.offsetWidth) / 2 + 'px';
     span.style.marginTop = -span.scrollHeight / 2 + 'px';
-    div.addEventListener("mouseover" ||"touches" , function () {
+    div.addEventListener("mouseover" , function () {
 
         document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
             h.style.opacity = "0";
@@ -334,7 +334,7 @@ function createImageTooltip(div, args) {
         div.style.pointerEvents = "auto";
     });
 
-    div.addEventListener("mouseleave", function () {
+    div.addEventListener("mouseleave"||"touchmove", function () {
 
         document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
             h.style.opacity = "1";
@@ -345,10 +345,6 @@ function createImageTooltip(div, args) {
 
 
     
-
-
-</script>
-}
 
 
 </script>
