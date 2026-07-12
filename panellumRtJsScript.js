@@ -1,6 +1,7 @@
 
-function createImageTooltip(div, args) {
 
+function createImageTooltip(div, args) {
+    const panormama = document.getElementById('panormama')
     var span = document.createElement('span');
 
     if (args[0].length === 0) {
@@ -19,7 +20,7 @@ function createImageTooltip(div, args) {
     `;       
     }
 
-
+        
     div.classList.add('custom-tooltip');
     div.appendChild(span);
 
@@ -39,21 +40,23 @@ function createImageTooltip(div, args) {
 
         div.style.opacity = "1";
         div.style.pointerEvents = "auto";
+        div.addEventListener("mouseleave", function () {
+
+            document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
+                h.style.opacity = "1";
+                h.style.pointerEvents = "auto";
+            });
+        });
+                panorama.addEventListener("touchstart", function () {
+
+            document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
+                h.style.opacity = "1";
+                h.style.pointerEvents = "auto";
+            });
+        });
+           
     });
 
-    div.addEventListener("mouseleave", function () {
 
-        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
-            h.style.opacity = "1";
-            h.style.pointerEvents = "auto";
-        });
-    });
-       div.addEventListener("touchstart", function () {
-
-        document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
-            h.style.opacity = "1";
-            h.style.pointerEvents = "auto";
-        });
-    }); 
 
 }
