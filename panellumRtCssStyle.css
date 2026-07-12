@@ -1,0 +1,89 @@
+
+    #panorama {
+        width:1200px;
+        height: 600px;
+    }
+
+    h1{
+    font-size: 24px;
+    margin: 0 0 15px;
+    color: #111;
+    }
+
+    h2{
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    }
+    
+    div.custom-tooltip span {
+        visibility: hidden;
+        position: absolute;
+        background: linear-gradient(180deg, #ffffff 246px, #F4F4F4 247px,#F4F4F4);
+         box-shadow: 2px 2px 5px #333333;
+        border-radius: 5px;
+        width: 244px;    
+        text-align: center;
+        cursor: default;
+        font-weight: bold;
+        z-index: 2;
+
+    }
+    img {
+        margin-top: 8px;
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+    }
+    .icon-element {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/icons/heart.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    div.custom-tooltip:hover span{
+        visibility: visible;
+        z-index: 9999;
+    }
+    .enlace-menu {
+        background-color: #001F4B;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 15px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .enlace-menu:hover {
+        background-color:  #00D78B; 
+        color: white;
+    }
+    div.custom-tooltip:hover .enlace-menu {
+    transition: background-color 0.4s;
+    }
+    .espacio{
+        width: 50px;
+        height: 50px;
+        background-image: url('Marcador Espacio Redtech.svg');
+        background-repeat: no-repeat;
+        background-size: contain;   
+    }
+
+    .pnlm-hotspot:hover span{
+        width: 0px;
+        height: 50px;
+
+    }
+
+    .mueble{
+        width: 40px;
+        height: 40px;
+        background-image: url('Marcador Mueble Redtech.svg');
+        background-repeat: no-repeat;
+        background-size: contain; 
+    }
