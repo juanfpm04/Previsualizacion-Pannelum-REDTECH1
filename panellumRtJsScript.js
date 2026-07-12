@@ -1,5 +1,6 @@
 
 
+
 function createImageTooltip(div, args) {
     const panormama = document.getElementById('panormama')
     var span = document.createElement('span');
@@ -47,7 +48,7 @@ function createImageTooltip(div, args) {
                 h.style.pointerEvents = "auto";
             });
         });
-                panorama.addEventListener("touchstart", function () {
+        document.addEventListener("touchmove", function () {
 
             document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
                 h.style.opacity = "1";
@@ -60,3 +61,4 @@ function createImageTooltip(div, args) {
 
 
 }
+
