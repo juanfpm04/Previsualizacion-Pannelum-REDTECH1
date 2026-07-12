@@ -48,7 +48,7 @@ function createImageTooltip(div, args) {
                 h.style.pointerEvents = "auto";
             });
         });
-        document.addEventListener("touchmove", function () {
+        document.addEventListener("pointermove", function () {
 
             document.querySelectorAll(".pnlm-hotspot-base").forEach(h => {
                 h.style.opacity = "1";
