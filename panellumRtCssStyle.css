@@ -19,10 +19,10 @@
     div.custom-tooltip span {
         visibility: hidden;
         position: absolute;
-        background: linear-gradient(180deg, #ffffff 205px, #F4F4F4 206px,#F4F4F4);
+        background: linear-gradient(180deg, #ffffff 160px, #F4F4F4 161px,#F4F4F4);
          box-shadow: 2px 2px 5px #333333;
         border-radius: 5px;
-        width: 244px;    
+        width: 170px;    
         text-align: center;
         cursor: default;
         font-weight: bold;
@@ -36,9 +36,9 @@
     }
     }
     img {
-        margin-top: 8px;
-        width: 200px;
-        height: 200px;
+        margin-top: 10px;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
     }
     .icon-element {
@@ -60,7 +60,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 12px;
         margin: 15px 15px;
         cursor: pointer;
         border-radius: 5px;
@@ -82,7 +82,7 @@
 
     .pnlm-hotspot:hover span{
         width: 0px;
-        height: 20px;
+        height: 35px;
 
     }
 
